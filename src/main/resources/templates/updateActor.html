@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+ 
+
+<head>
+
+    <meta charset="utf-8">
+
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>Update Actor</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+
+          crossorigin="anonymous">
+
+    <style>
+
+        /* Add custom CSS styles here */
+
+        .container {
+
+            margin-top: 20px;
+
+        }
+
+ 
+
+        .card {
+
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+            padding: 20px;
+
+        }
+
+ 
+
+        h2 {
+
+            margin-bottom: 20px;
+
+        }
+
+ 
+
+        .btn {
+
+            margin: 5px;
+
+        }
+
+    </style>
+
+</head>
+
+ 
+
+<body>
+
+    <div class="container my-2">
+
+        <div class="card">
+
+            <div class="card-body">
+
+                <h2>Update Actor</h2>
+
+                <form th:action="@{/api/ui/actors/update/{actorId}(actorId=${updatedActor.actor_id})}"
+
+                      th:object="${updatedActor}" method="post">
+
+                    <input type="hidden" th:field="*{actor_id}">
+
+                    <div class="form-group">
+
+                        <label for="first_name">First Name:</label>
+
+                        <input type="text" class="form-control" id="first_name" th:field="*{first_name}" required>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="last_name">Last Name:</label>
+
+                        <input type="text" class="form-control" id="last_name" th:field="*{last_name}" required>
+
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Update Actor</button>
+					<!-- Add this code to your updateActor.html template -->
+<!--<a th:href="@{/api/ui/actors/update/{actorId}(actorId=${updatedActor.actor_id})}" class="btn btn-info">Update</a>
+--><!-- Add this code to your updateActor.html template -->
+
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+ 
+
+</html>

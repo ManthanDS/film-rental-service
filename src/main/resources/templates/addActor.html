@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+ 
+
+<head>
+
+    <meta charset="utf-8">
+
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>Add Actor</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+
+          crossorigin="anonymous">
+
+    <style>
+
+        /* Add custom CSS styles here */
+
+        .container {
+
+            margin-top: 20px;
+
+        }
+
+ 
+
+        .card {
+
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+            padding: 20px;
+
+        }
+
+ 
+
+        .form-group {
+
+            margin-bottom: 20px;
+
+        }
+
+ 
+
+        label {
+
+            font-weight: bold;
+
+        }
+
+    </style>
+
+</head>
+
+ 
+
+<body>
+
+    <div class="container my-5">
+
+        <h3>Add Actor</h3>
+
+        <div class="card">
+
+            <div class="card-body">
+
+                <div class="col-md-10">
+
+                    <form th:action="@{/api/ui/actors/add}" th:object="${newActor}" method="post">
+
+                        <div class="form-group">
+
+                            <label for="first_name">First Name:</label>
+
+                            <input type="text" class="form-control" id="first_name" th:field="*{first_name}" required>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label for="last_name">Last Name:</label>
+
+                            <input type="text" class="form-control" id="last_name" th:field="*{last_name}" required>
+
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Add Actor</button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+ 
+
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+ 
+
+<head>
+
+    <meta charset="utf-8">
+
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>Actor Details</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+
+          crossorigin="anonymous">
+
+    <style>
+
+        /* Add custom CSS styles here */
+
+        .container {
+
+            margin-top: 20px;
+
+        }
+
+ 
+
+        .card {
+
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+            padding: 20px;
+
+        }
+
+ 
+
+        h3 {
+
+            margin-bottom: 20px;
+
+        }
+
+ 
+
+        .btn {
+
+            margin: 5px;
+
+        }
+
+    </style>
+
+</head>
+
+ 
+
+<body>
+
+    <div class="container my-5">
+
+        <h3>Actor Details</h3>
+
+        <div class="card">
+
+            <div class="card-body">
+
+                <div class="col-md-10">
+
+                    <table class="table">
+
+                        <tbody>
+
+                            <tr>
+
+                                <th>Actor ID:</th>
+
+                                <td th:text="${actor.actor_id}"></td>
+
+                            </tr>
+
+                            <tr>
+
+                                <th>First Name:</th>
+
+                                <td th:text="${actor.first_name}"></td>
+
+                            </tr>
+
+                            <tr>
+
+                                <th>Last Name:</th>
+
+                                <td th:text="${actor.last_name}"></td>
+
+                            </tr>
+
+                            <tr>
+
+                                <th>Last Update:</th>
+
+                                <td th:text="${actor.last_update}"></td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                    <a th:href="@{/api/ui/actors/all}" class="btn btn-primary">Back to All Actors</a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+ 
+
+</html>
